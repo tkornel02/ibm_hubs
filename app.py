@@ -89,7 +89,26 @@ class App:
 
 def main():
     app = App()
-    app.run()
+    # finish paging through the results
+    full_response = response = app.client.post_search(
+            db=app.db_name,
+            ddoc='view1',
+            index='geo',
+            query=f"lat:[37.990990990990994 TO 56.009009009009006] AND lon:[5.790277606850225 TO 32.209722393149775]"
+        ).get_result()
+    while True:
+        response = app.client.post_search(
+            db=app.db_name,
+            ddoc='view1',
+            index='geo',
+            query=f"lat:[37.990990990990994 TO 56.009009009009006] AND lon:[5.790277606850225 TO 32.209722393149775]",
+            bookmark=full_response.get("bookmark")
+        ).get_result()
+        bookmark = response.get("bookmark")
+        full_response.update(total_rows=response.get("total_rows"))
+        if response.get("rows"):
+            full_response.get("rows").extend(response.get("rows"))
+        
 
 
 if __name__ == '__main__':
