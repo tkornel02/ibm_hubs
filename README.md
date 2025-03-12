@@ -2,8 +2,8 @@
 
 1. Clone this repository:
     ```sh
-    git clone https://github.com/tkornel02/ibm_tkornel
-    cd ibm_tkornel
+    git clone https://github.com/tkornel02/ibm_hubs
+    cd ibm_hubs
     ```
 
 2. Install the required dependencies:
