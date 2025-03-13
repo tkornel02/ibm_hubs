@@ -1,3 +1,6 @@
+# App 
+This CLI app retrieves and displays airport hubs within a specified distance from a given latitude and longitude using data from a Cloudant database.
+
 ## Installation
 
 1. Clone this repository:
