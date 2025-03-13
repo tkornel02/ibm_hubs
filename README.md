@@ -15,7 +15,7 @@
 
 1. Run the application:
     ```sh
-    python app.py --lat <latitude of location> --lon <longitude of location> --dist <max distance from location> 
+    python app.py --lat <latitude> --lon <longitude> --dist <max>
     ```
 
 ## Notes
